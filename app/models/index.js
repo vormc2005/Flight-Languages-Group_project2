@@ -34,4 +34,48 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-module.exports = db;
+
+
+/************************************** */
+
+// const mysql = require("mysql");
+
+
+// /**Connection */
+// var connection = mysql.createConnection({
+//   host: "localhost",
+
+//   // Your port; if not 3306
+//   port: 3306,
+
+//   // Your username
+//   user: "root",
+
+//   // Your password
+//   password: "Mysql#123",
+//   database: "languages"
+// });
+
+// connection.connect(function (err) {
+//   if (err) throw err;
+//   console.log("connected as id " + connection.threadId);
+//  displayPhrases();
+
+
+  
+// });
+
+
+// displayPhrases =()=>{
+
+//     connection.query("SELECT name, code, english, translated FROM phrases INNER JOIN country_codes ON  country_id=country_codes.id", function(err, response){
+//         if(err) throw err;
+//         console.log('\n');
+//         console.table(response);
+//     })
+
+
+// };
+
+
+
