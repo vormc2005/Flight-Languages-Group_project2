@@ -1,155 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Bulma -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+    <!-- FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <title>BuddySystem</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- Bulma -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  <!-- FontAwesome -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- JQuery -->
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <title>BuddySystem</title>
-</head>
-
-<body>
-  <!--========-->
-  <!-- navbar -->
-  <!--========-->
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="../public/index.html">
-        BuddySystem (BETA)
-      </a>
-  
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-  
-    <div id="navbarBasicExample" class="navbar-menu">
-      <div class="navbar-start">
+  <body>
+    <!--========-->
+    <!-- navbar -->
+    <!--========-->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
         <a class="navbar-item" href="../public/index.html">
-          Home
+          BuddySystem (BETA)
         </a>
-  
-        <a class="navbar-item" href="../public/submit.html">
-          Help us grow!
+
+        <a
+          role="button"
+          class="navbar-burger burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
         </a>
-  
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
-            More
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="../public/index.html">
+            Home
           </a>
-  
-          <div class="navbar-dropdown">
-            <a class="navbar-item">
-              About
+
+          <a class="navbar-item" href="../public/submit.html">
+            Help us grow!
+          </a>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              More
             </a>
-            <a class="navbar-item">
-              Jobs
-            </a>
-            <a class="navbar-item">
-              Contact
-            </a>
-            <hr class="navbar-divider">
-            <a class="navbar-item">
-              Report an issue
-            </a>
+
+            <div class="navbar-dropdown">
+              <a class="navbar-item">
+                About
+              </a>
+              <a class="navbar-item">
+                Jobs
+              </a>
+              <a class="navbar-item">
+                Contact
+              </a>
+              <hr class="navbar-divider" />
+              <a class="navbar-item">
+                Report an issue
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="navbar-end">
-        <div class="navbar-item">
+        <div class="navbar-end">
+          <div class="navbar-item"></div>
         </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-<!--======-->
-<!-- Hero -->
-<!--======-->
-<section class="hero is-medium is-primary is-bold">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        Welcome to BuddySystem (BETA)
-      </h1>
-      <h2 class="subtitle">
-        Here to help when you just can't find the right words
-      </h2>
-    </div>
-  </div>
-</section>
+    <!--======-->
+    <!-- Hero -->
+    <!--======-->
+    <section class="hero is-medium is-primary is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            Welcome to BuddySystem (BETA)
+          </h1>
+          <h2 class="subtitle">
+            Here to help when you just can't find the right words
+          </h2>
+        </div>
+      </div>
+    </section>
 
-<!-- ============= -->
-<!-- Dropdown Form -->
-<!-- ============= -->
-<br><br>
-<div class = "container has-text-centered">
-  <div class="card">
-    <div class="card-content">
-      <p class="title">
-        Have a place you wish to go?
-      </p>
-      <p class="subtitle">
-        Select from our database to see THE phrases you need to know when you travel!
-      </p>
-    </div>
-    <!-- Country Select -->
-    <div class="card-content">
-      <div class="select is-primary">
-        <select id="end">
-          <option>Select Country</option>
-          <option value="PEK">China</option>
-          <option value="ICN">Korea</option>
-          <option value="DME">Russia</option>
-        </select>
+    <!-- ============= -->
+    <!-- Dropdown Form -->
+    <!-- ============= -->
+    <br /><br />
+    <div class="container has-text-centered">
+      <div class="card">
+        <div class="card-content">
+          <p class="title">
+            Have a place you wish to go?
+          </p>
+          <p class="subtitle">
+            Select from our database to see THE phrases you need to know when
+            you travel!
+          </p>
+        </div>
+        <!-- Country Select -->
+        <div class="card-content">
+          <div class="select is-primary">
+            <select id="end">
+              <option>Select Country</option>
+              <option value="PEK">China</option>
+              <option value="ICN">Korea</option>
+              <option value="DME">Russia</option>
+            </select>
+          </div>
+
+          <!-- Airport Select -->
+          <div class="select is-primary">
+            <select id="start">
+              <option>Select Airport</option>
+              <option value="DCA">Washington, D.C. (DCA)</option>
+              <option value="ORD">Chicago, IL (ORD)</option>
+              <option value="LAX">Los Angeles, CA (LAX)</option>
+            </select>
+          </div>
+        </div>
+        <br />
+        <!-- Card footer with submit button -->
+        <footer class="card-footer">
+          <p class="card-footer-item">
+            <span>
+              <button class="button is-primary">Let's Go!</button>
+            </span>
+          </p>
+        </footer>
       </div>
-    
-    <!-- Airport Select -->
-      <div class="select is-primary">
-        <select id="start">
-          <option>Select Airport</option>
-          <option value="DCA">Washington, D.C. (DCA)</option>
-          <option value="ORD">Chicago, IL (ORD)</option>
-          <option value="LAX">Los Angeles, CA (LAX)</option>
-        </select>
-      </div>
     </div>
-    <br>
-    <!-- Card footer with submit button -->
-    <footer class="card-footer">
-      <p class="card-footer-item">
-        <span>
-          <button class="button is-primary">Let's Go!</button>
-        </span>
-      </p>
+
+    <!-- ====== -->
+    <!-- Footer -->
+    <!-- ====== -->
+    <br /><br />
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>BuddySystem</strong> by Jonathan Choi, Brendan Erickson,
+          Dmitry Voronov, and Khalil Hall. The source code is licensed
+          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The
+          website content is licensed
+          <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+            >CC BY NC SA 4.0</a
+          >.
+        </p>
+      </div>
     </footer>
-  </div>
-</div>
-
-
-<!-- ====== -->
-<!-- Footer -->
-<!-- ====== -->
-<br><br>
-<footer class="footer">
-  <div class="content has-text-centered">
-    <p>
-      <strong>BuddySystem</strong> by Jonathan Choi, Brendan Erickson, Dmitry Voronov, and Khalil Hall. The source code is licensed
-      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-      is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-    </p>
-  </div>
-</footer>
-
-</body>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="../public/js/app.js"></script>
+  </body>
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+  ></script>
+  <script src="./js/app.js"></script>
 </html>
