@@ -1,12 +1,17 @@
 // Dependencies
 // =============================================================
-var express = require("express");
+const express = require("express");
 const db = require("./app/models");
+const exphbs = require("express-handlebars");
+const sequelize = require("sequelize");
 
 // Sets up the Express App
 // =============================================================
-var app = express();
-var PORT = process.env.PORT || 8080;
+const app = express();
+const PORT = process.env.PORT || 8080;
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -17,23 +22,23 @@ app.use(express.static("app/public"));
 
 // Routes
 // =============================================================
-require("./groupproject2/app/routes/api-routes.js")(app);
+require("./app/routes/api-routes.js")(app);
 
 // Starts the server to begin listening
 // =============================================================
-db.sequelize.sync({ force: true }).then(function(){
-  app.listen(PORT, function(){
+db.sequelize.sync({ force: true }).then(function() {
+  app.listen(PORT, function() {
     console.log("Listening on port %s", PORT);
-  })
-})
+  });
+});
 
 /**********************************************
- * 
- * 
- * 
+ *
+ *
+ *
  */
 // var express = require("express");
-// var exphbs = require("express-handlebars");
+
 // var mysql = require("mysql");
 
 // var app = express();
@@ -45,9 +50,6 @@ db.sequelize.sync({ force: true }).then(function(){
 // // Parse request body as JSON
 // app.use(express.urlencoded({ extended: true }));
 // app.use(express.json());
-
-// app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-// app.set("view engine", "handlebars");
 
 // var connection = mysql.createConnection({
 //   host: "localhost",
@@ -105,11 +107,6 @@ db.sequelize.sync({ force: true }).then(function(){
 
 //   });
 // });
-
-
-
-
-
 
 // // Start our server so that it can begin listening to client requests.
 // app.listen(PORT, function() {
