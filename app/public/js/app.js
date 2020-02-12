@@ -40,9 +40,10 @@ $("#add-new").on("click", function(event){
 		
 	}
 	console.log(newCountry);
+})
+
 	//  Show phrases on click
 	$("#go").on("click", function () {
 		$("#airport").addClass("is-hidden");
 		$("#phrases").removeClass("is-hidden");
 	})
-})
