@@ -16,3 +16,9 @@ $.ajax(settings).done(function (response) {
 });
 }
 flight()
+
+//  Show phrases on click
+$("#go").on("click", function () {
+	$("#airport").addClass("is-hidden");
+	$("#phrases").removeClass("is-hidden");
+})
