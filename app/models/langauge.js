@@ -17,7 +17,7 @@ module.exports = function(sequelize, Datatypes) {
   return Phrase;
 };
 
-/*Name
+/*Name Chinese
           <div id="hello">
             Hello knee how
           </div>
@@ -40,7 +40,7 @@ module.exports = function(sequelize, Datatypes) {
             Bathroom way shung jian
           </div>
           <div id="yN">
-            Yes/No sure boo sure
+            Yes/No sure/boo sure
           </div>
           <div id="allergy">
             I am allergic to ... wol dway ___ gwol min
@@ -53,5 +53,44 @@ module.exports = function(sequelize, Datatypes) {
           </div>
           <div id="sorry">
             Sorry dway boo chee
+          </div>
+*/
+
+/*Name Korean
+          <div id="hello">
+            Hello ahn young ha say yo
+          </div>
+          <div id="goodbye">
+            Goodbye ahn young geh say yo
+          </div>
+          <div id="thankYou">
+            Thank you gahm sahm knee dah
+          </div>
+          <div id="excuseMe">
+            Excuse me joe gi yo
+          </div>
+          <div id="mayI">
+            May I have ... ________ joe say yo
+          </div>
+          <div id="howMuch">
+            How much does it cost? ol ma nah yo?
+          </div>
+          <div id="bathroom">
+            Bathroom way hwa jyang she'll
+          </div>
+          <div id="yN">
+            Yes/No neh/ahni
+          </div>
+          <div id="allergy">
+            I am allergic to ...  _______ moat moe go
+          </div>
+          <div id="whereIs">
+            Where is ... ______ ouh lee ees oh yo
+          </div>
+          <div id="help">
+            Help doe wa joe say so
+          </div>
+          <div id="sorry">
+            Sorry jay song haam knee dah
           </div>
 */
