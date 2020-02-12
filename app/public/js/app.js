@@ -12,13 +12,37 @@ var settings = {
 }
 function flight(){
 $.ajax(settings).done(function (response) {
-	console.log(response.data.SEL[0].price);
+	console.log(response);
 });
 }
 flight()
 
-//  Show phrases on click
-$("#go").on("click", function () {
-	$("#airport").addClass("is-hidden");
-	$("#phrases").removeClass("is-hidden");
+
+
+$("#add-new").on("click", function(event){
+	console.log("clicked")
+	event.preventDefault();
+
+	var newCountry = {
+		country: $("#country").val().trim(),
+		hello: $("#hello").val().trim(),
+		goodbye: $("#goodbye").val().trim(),
+		thanks: $("#thank-you").val().trim(),
+		excuse: $("#excuse-me").val().trim(),
+		may_i: $("#may-I").val().trim(),
+		how_much: $("#how-much").val().trim(),
+		bathroom: $("#bathroom").val().trim(),
+		yes: $("#yes").val().trim(),
+		allergic: $("#allergic").val().trim(),
+		where: $("#where").val().trim(),
+		help: $("#help").val().trim(),
+		sorry: $("#sorry").val().trim()
+		
+	}
+	console.log(newCountry);
+	//  Show phrases on click
+	$("#go").on("click", function () {
+		$("#airport").addClass("is-hidden");
+		$("#phrases").removeClass("is-hidden");
+	})
 })
