@@ -12,7 +12,7 @@ var settings = {
 }
 function flight(){
 $.ajax(settings).done(function (response) {
-	console.log(response);
+	console.log(response.data.SEL[0].price);
 });
 }
 flight()
