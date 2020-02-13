@@ -11,7 +11,8 @@ function flight() {
       "x-rapidapi-key": "aa3dd9aaf7msh72e32624a82ff64p19458djsnf620a5c313c0",
       "x-access-token": "67284ded587b515fc873b2264829b953"
     }
-  }).done(function(response) {
+  }).then(function(response) {
+
     let search = response.data;
     console.log(search);
     console.log(end);
@@ -28,17 +29,24 @@ function flight() {
     //   console.log(response.data.MOW[0].price);
     //   $("#price").text("$" + response.data.MOW[0].price);
     // }
-    // switch (response.data) {
-    //   case "BJS":
-    //     console.log("china");
-    //     break;
-    //   case "SEL":
-    //     console.log("korea");
-    //     break;
-    //   case "MOW":
-    //     console.log("russia");
-    //     break;
-    // }
+    switch (end) {
+      case "PEK":
+        console.log("china");
+        console.log(response.data.BJS[1].price);
+        $("#price").text("$" + response.data.BJS[1].price);
+        break;
+      case "ICN":
+        console.log("korea");
+        console.log(response.data.SEL[0].price);
+        $("#price").text("$" + response.data.SEL[0].price);
+        break;
+      case "DME":
+        console.log("russia");
+        console.log(response.data.MOW[0].price);
+        $("#price").text("$" + response.data.MOW[0].price);
+        break;
+    }
+
     // console.log(response.data);
     // console.log(response.data.BJS);
   });
