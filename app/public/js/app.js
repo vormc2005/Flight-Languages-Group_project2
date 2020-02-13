@@ -1,20 +1,22 @@
 // For testing api
 // let end = "ICN";
 // let start = "DCA";
-// selecting end location
 
 // selecting end location
 function GetSelectedEnd(){
 	var e = document.getElementById("end");
 	var end = JSON.stringify(e.options[e.selectedIndex].value);
 	console.log(end);
+	return(end);
 }
 // selecting start location
 function GetSelectedStart(){
 	var s = document.getElementById("start");
 	var start = JSON.stringify(s.options[s.selectedIndex].value);
 	console.log(start);
+	return(start);
 }
+
 
 let settings = {
 	"async": true,
