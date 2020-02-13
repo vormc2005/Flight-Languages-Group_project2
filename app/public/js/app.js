@@ -12,8 +12,42 @@ function flight() {
       "x-rapidapi-key": "aa3dd9aaf7msh72e32624a82ff64p19458djsnf620a5c313c0",
       "x-access-token": "67284ded587b515fc873b2264829b953"
     }
-  }).done(function(response) {
-    console.log(response.data);
+  }).then(function(response) {
+    let search = response.data;
+    console.log(search);
+    console.log(end);
+    // if (response.data.BJS[0].price) {
+    //   console.log(response.data.BJS[0].price);
+    //   console.log("china");
+    //   $("#price").text("$" + response.data.BJS[0].price);
+    // } else if (response.data.SEL[0].price) {
+    //   console.log(response.data.SEL[0].price);
+    //   console.log("korea");
+    //   $("#price").text("$" + response.data.SEL[0].price);
+    // } else if (response.data.MOW[0].price) {
+    //   console.log("Russia");
+    //   console.log(response.data.MOW[0].price);
+    //   $("#price").text("$" + response.data.MOW[0].price);
+    // }
+    switch (end) {
+      case "PEK":
+        console.log("china");
+        console.log(response.data.BJS[1].price);
+        $("#price").text("$" + response.data.BJS[1].price);
+        break;
+      case "ICN":
+        console.log("korea");
+        console.log(response.data.SEL[0].price);
+        $("#price").text("$" + response.data.SEL[0].price);
+        break;
+      case "DME":
+        console.log("russia");
+        console.log(response.data.MOW[0].price);
+        $("#price").text("$" + response.data.MOW[0].price);
+        break;
+    }
+    // console.log(response.data);
+    // console.log(response.data.BJS);
   });
 }
 
@@ -70,7 +104,5 @@ $("#go").on("click", function() {
   $("#airport").addClass("is-hidden");
   $("#phrases").removeClass("is-hidden");
   $("#avrg").removeClass("is-hidden");
-  GetSelectedStart();
-  GetSelectedEnd();
   flight();
 });
