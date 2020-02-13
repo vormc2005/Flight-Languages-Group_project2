@@ -94,3 +94,43 @@ module.exports = function(sequelize, Datatypes) {
             Sorry jay song haam knee dah
           </div>
 */
+
+
+/*Name Rusiian
+          <div id="hello">
+            Hello Zdravstvuite
+          </div>
+          <div id="goodbye">
+            Goodbye Do svidaniya
+          </div>
+          <div id="thankYou">
+            Thank you Spasibo
+          </div>
+          <div id="excuseMe">
+            Excuse me Izvinite
+          </div>
+          <div id="mayI">
+            May I have ... Mojno mne...
+          </div>
+          <div id="howMuch">
+            How much does it cost? Skol'ko stoit?
+          </div>
+          <div id="bathroom">
+            Bathroom Tualet
+          </div>
+          <div id="yN">
+            Yes/No Da/Net
+          </div>
+          <div id="allergy">
+            I am allergic to ...  U meniya alergiya
+          </div>
+          <div id="whereIs">
+            Where is ...Gde nahoditsiya
+          </div>
+          <div id="help">
+            Help Pomogite
+          </div>
+          <div id="sorry">
+            Sorry Proshu prosheniya
+          </div>
+*/
