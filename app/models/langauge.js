@@ -68,7 +68,7 @@ module.exports = function(sequelize, Datatypes) {
     allergy: "Alergiya",
     whereis:"Gde nahoditsiya",
     help: "Pomogite",
-    sorry:"Prostite"
+    sorry:"Proshu prosh'eniya"
 
     })
   })
