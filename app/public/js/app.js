@@ -1,4 +1,5 @@
 // For testing api
+
 function flight() {
   let start = $("#start :selected").val();
   let end = $("#end :selected").val();
@@ -108,6 +109,37 @@ $("#go").on("click", function() {
 	//   showPhrase();
 });
 
+// Dmitry
+// for (i=0; i< Phrase.length; i++){
+// 	if (Phrase.countryname ==="Korea"){
+// 		var country = val(phrase.countryname);
+// 		$("#country").append(country)
+
+// 	}
+// }
+
+
+$("#end").on("click", function(e) {
+	e.preventDefault();
+	let end = $("#end :selected").text();	
+	console.log(end)
+	if (end === "China"){
+		console.log("you are almost chinese")
+		languagesdb.Phrase.findALL({
+			where:{
+				countryname:"China"
+			}
+		});
+			console.log(response);
+		
+		}else if(end==="Korea"){
+			console.log("Lets go to korea")
+	}else{
+		console.log("Lets go to Russia")
+	}
+  });
+
+// Khalil
 function GetSelectedEnd(end){
 	// let end = $("#end :selected").val();
 	switch(end){
