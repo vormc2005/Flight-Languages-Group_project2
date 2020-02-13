@@ -1,5 +1,4 @@
 // For testing api
-
 function flight() {
   let start = $("#start :selected").val();
   let end = $("#end :selected").val();
@@ -13,14 +12,40 @@ function flight() {
       "x-access-token": "67284ded587b515fc873b2264829b953"
     }
   }).done(function(response) {
-    console.log(response.data);
+    let search = response.data;
+    console.log(search);
+    console.log(end);
+    // if (response.data.BJS[0].price) {
+    //   console.log(response.data.BJS[0].price);
+    //   console.log("china");
+    //   $("#price").text("$" + response.data.BJS[0].price);
+    // } else if (response.data.SEL[0].price) {
+    //   console.log(response.data.SEL[0].price);
+    //   console.log("korea");
+    //   $("#price").text("$" + response.data.SEL[0].price);
+    // } else if (response.data.MOW[0].price) {
+    //   console.log("Russia");
+    //   console.log(response.data.MOW[0].price);
+    //   $("#price").text("$" + response.data.MOW[0].price);
+    // }
+    // switch (response.data) {
+    //   case "BJS":
+    //     console.log("china");
+    //     break;
+    //   case "SEL":
+    //     console.log("korea");
+    //     break;
+    //   case "MOW":
+    //     console.log("russia");
+    //     break;
+    // }
+    // console.log(response.data);
+    // console.log(response.data.BJS);
   });
 }
-
 $("#add-new").on("click", function(event) {
   console.log("clicked");
   event.preventDefault();
-
   var newCountry = {
     country: $("#country")
       .val()
@@ -64,13 +89,10 @@ $("#add-new").on("click", function(event) {
   };
   console.log(newCountry);
 });
-
 //  Show phrases on click
 $("#go").on("click", function() {
   $("#airport").addClass("is-hidden");
   $("#phrases").removeClass("is-hidden");
   $("#avrg").removeClass("is-hidden");
-  GetSelectedStart();
-  GetSelectedEnd();
   flight();
 });
