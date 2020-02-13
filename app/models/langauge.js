@@ -61,7 +61,7 @@ module.exports = function(sequelize, Datatypes) {
             Hello ahn young ha say yo
           </div>
           <div id="goodbye">
-            Goodbye ahn young geh say yo
+            Goodbye ahn young gey say yo
           </div>
           <div id="thankYou">
             Thank you gahm sahm knee dah
@@ -88,7 +88,7 @@ module.exports = function(sequelize, Datatypes) {
             Where is ... ______ ouh lee ees oh yo
           </div>
           <div id="help">
-            Help doe wa joe say so
+            Help doe wa joe say yo
           </div>
           <div id="sorry">
             Sorry jay song haam knee dah

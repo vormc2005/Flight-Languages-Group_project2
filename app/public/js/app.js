@@ -1,8 +1,25 @@
 // For testing api
-var settings = {
+// let end = "ICN";
+// let start = "DCA";
+// selecting end location
+
+// selecting end location
+function GetSelectedEnd(){
+	var e = document.getElementById("end");
+	var end = JSON.stringify(e.options[e.selectedIndex].value);
+	console.log(end);
+}
+// selecting start location
+function GetSelectedStart(){
+	var s = document.getElementById("start");
+	var start = JSON.stringify(s.options[s.selectedIndex].value);
+	console.log(start);
+}
+
+let settings = {
 	"async": true,
 	"crossDomain": true,
-	"url": "https://travelpayouts-travelpayouts-flight-data-v1.p.rapidapi.com/v1/prices/cheap?destination=ICN&origin=DCA&currency=USD&page=1",
+	"url": "https://travelpayouts-travelpayouts-flight-data-v1.p.rapidapi.com/v1/prices/cheap?destination=" + end + "&origin=" + start + "&currency=USD&page=1",
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "travelpayouts-travelpayouts-flight-data-v1.p.rapidapi.com",
@@ -15,8 +32,6 @@ $.ajax(settings).done(function (response) {
 	console.log(response.data.SEL[0].price);
 });
 }
-flight()
-
 
 
 $("#add-new").on("click", function(event){
@@ -46,4 +61,8 @@ $("#add-new").on("click", function(event){
 	$("#go").on("click", function () {
 		$("#airport").addClass("is-hidden");
 		$("#phrases").removeClass("is-hidden");
+		$("#avrg").removeClass("is-hidden");
+		GetSelectedStart();
+		GetSelectedEnd();
+		flight();
 	})
