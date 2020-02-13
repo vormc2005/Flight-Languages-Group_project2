@@ -1,5 +1,4 @@
 // For testing api
-
 function flight() {
   let start = $("#start :selected").val();
   let end = $("#end :selected").val();
@@ -13,6 +12,7 @@ function flight() {
       "x-access-token": "67284ded587b515fc873b2264829b953"
     }
   }).then(function(response) {
+
     let search = response.data;
     console.log(search);
     console.log(end);
@@ -46,15 +46,14 @@ function flight() {
         $("#price").text("$" + response.data.MOW[0].price);
         break;
     }
+
     // console.log(response.data);
     // console.log(response.data.BJS);
   });
 }
-
 $("#add-new").on("click", function(event) {
   console.log("clicked");
   event.preventDefault();
-
   var newCountry = {
     country: $("#country")
       .val()
@@ -98,7 +97,6 @@ $("#add-new").on("click", function(event) {
   };
   console.log(newCountry);
 });
-
 //  Show phrases on click
 $("#go").on("click", function() {
   $("#airport").addClass("is-hidden");
