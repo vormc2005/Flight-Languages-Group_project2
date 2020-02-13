@@ -17,20 +17,8 @@ function flight() {
     let search = response.data;
     console.log(search);
     console.log(end);
-    // if (response.data.BJS[0].price) {
-    //   console.log(response.data.BJS[0].price);
-    //   console.log("china");
-    //   $("#price").text("$" + response.data.BJS[0].price);
-    // } else if (response.data.SEL[0].price) {
-    //   console.log(response.data.SEL[0].price);
-    //   console.log("korea");
-    //   $("#price").text("$" + response.data.SEL[0].price);
-    // } else if (response.data.MOW[0].price) {
-    //   console.log("Russia");
-    //   console.log(response.data.MOW[0].price);
-    //   $("#price").text("$" + response.data.MOW[0].price);
-		// }
-		GetSelectedEnd(end);
+
+		// GetSelectedEnd(end);
     switch (end) {
       case "PEK":
         console.log("china");
@@ -53,6 +41,7 @@ function flight() {
     // console.log(response.data.BJS);
   });
 }
+
 $("#add-new").on("click", function(event) {
   console.log("clicked");
   event.preventDefault();
@@ -99,6 +88,7 @@ $("#add-new").on("click", function(event) {
   };
   console.log(newCountry);
 });
+
 //  Show phrases on click
 $("#go").on("click", function() {
   $("#airport").addClass("is-hidden");
@@ -119,51 +109,51 @@ $("#go").on("click", function() {
 // }
 
 
-$("#end").on("click", function(e) {
-	e.preventDefault();
-	let end = $("#end :selected").text();	
-	console.log(end)
-	if (end === "China"){
-		console.log("you are almost chinese")
-		languagesdb.Phrase.findALL({
-			where:{
-				countryname:"China"
-			}
-		});
-			console.log(response);
+// $("#end").on("click", function(e) {
+// 	e.preventDefault();
+// 	let end = $("#end :selected").text();	
+// 	console.log(end)
+// 	if (end === "China"){
+// 		console.log("you are almost chinese")
+// 		languagesdb.Phrase.findALL({
+// 			where:{
+// 				countryname:"China"
+// 			}
+// 		});
+// 			console.log(response);
 		
-		}else if(end==="Korea"){
-			console.log("Lets go to korea")
-	}else{
-		console.log("Lets go to Russia")
-	}
-  });
+// 		}else if(end==="Korea"){
+// 			console.log("Lets go to korea")
+// 	}else{
+// 		console.log("Lets go to Russia")
+// 	}
+//   });
 
-// Khalil
-function GetSelectedEnd(end){
-	// let end = $("#end :selected").val();
-	switch(end){
-			case "PEK":
-					showChina();
-					break;
-			case "ICN":
-					showKorea();
-					break;
-			case "DME":
-					showRussia();
-					break;
-			default: 
-					alert("Please choose a country")
-	}
-};
-function showChina (){
-	var query = connection.query("SELECT * FROM Phrase WHERE ? ", [
-			{
-			countryname: "China"
-	}
-], function(err, res){
-	if (err) throw err;
-	console.log(res);
-})
-	console.log(query.sql)
-}
+// // Khalil
+// function GetSelectedEnd(end){
+// 	// let end = $("#end :selected").val();
+// 	switch(end){
+// 			case "PEK":
+// 					showChina();
+// 					break;
+// 			case "ICN":
+// 					showKorea();
+// 					break;
+// 			case "DME":
+// 					showRussia();
+// 					break;
+// 			default: 
+// 					alert("Please choose a country")
+// 	}
+// };
+// function showChina (){
+// 	var query = connection.query("SELECT * FROM Phrase WHERE ? ", [
+// 			{
+// 			countryname: "China"
+// 	}
+// ], function(err, res){
+// 	if (err) throw err;
+// 	console.log(res);
+// })
+// 	console.log(query.sql)
+// }
