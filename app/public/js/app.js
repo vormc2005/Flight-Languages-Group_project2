@@ -1,5 +1,7 @@
 // For testing api
 
+
+
 function flight() {
   let start = $("#start :selected").val();
   let end = $("#end :selected").val();
@@ -74,3 +76,29 @@ $("#go").on("click", function() {
   GetSelectedEnd();
   flight();
 });
+
+
+
+
+
+// for (i=0; i< Phrase.length; i++){
+// 	if (Phrase.countryname ==="Korea"){
+// 		var country = val(phrase.countryname);
+// 		$("#country").append(country)
+
+// 	}
+// }
+
+
+$("#end").on("click", function(e) {
+	e.preventDefault();
+	let end = $("#end :selected").text();	
+	console.log(end)
+	if (end === "China"){
+		console.log("you are almost chinese")
+		var connection = connection.query("SELECT * FROM Phrases", function(err, response){
+			if(err) throw err;
+			console.log(response);
+		})
+	}
+  });
