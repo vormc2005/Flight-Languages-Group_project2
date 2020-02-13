@@ -96,9 +96,16 @@ $("#end").on("click", function(e) {
 	console.log(end)
 	if (end === "China"){
 		console.log("you are almost chinese")
-		var connection = connection.query("SELECT * FROM Phrases", function(err, response){
-			if(err) throw err;
+		languagesdb.Phrase.findALL({
+			where:{
+				countryname:"China"
+			}
+		});
 			console.log(response);
-		})
+		
+		}else if(end==="Korea"){
+			console.log("Lets go to korea")
+	}else{
+		console.log("Lets go to Russia")
 	}
   });
