@@ -18,7 +18,7 @@ function flight() {
     console.log(search);
     console.log(end);
 
-		// GetSelectedEnd(end);
+		// GetSelectedEnd(end); 
     switch (end) {
       case "PEK":
         console.log("china");
