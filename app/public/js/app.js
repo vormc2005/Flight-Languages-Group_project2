@@ -28,7 +28,8 @@ function flight() {
     //   console.log("Russia");
     //   console.log(response.data.MOW[0].price);
     //   $("#price").text("$" + response.data.MOW[0].price);
-    // }
+		// }
+		GetSelectedEnd(end);
     switch (end) {
       case "PEK":
         console.log("china");
@@ -101,6 +102,36 @@ $("#add-new").on("click", function(event) {
 $("#go").on("click", function() {
   $("#airport").addClass("is-hidden");
   $("#phrases").removeClass("is-hidden");
-  $("#avrg").removeClass("is-hidden");
-  flight();
+	$("#avrg").removeClass("is-hidden");
+	//   GetSelectedStart();
+	flight();
+	//   showPhrase();
 });
+
+function GetSelectedEnd(end){
+	// let end = $("#end :selected").val();
+	switch(end){
+			case "PEK":
+					showChina();
+					break;
+			case "ICN":
+					showKorea();
+					break;
+			case "DME":
+					showRussia();
+					break;
+			default: 
+					alert("Please choose a country")
+	}
+};
+function showChina (){
+	var query = connection.query("SELECT * FROM Phrase WHERE ? ", [
+			{
+			countryname: "China"
+	}
+], function(err, res){
+	if (err) throw err;
+	console.log(res);
+})
+	console.log(query.sql)
+}
