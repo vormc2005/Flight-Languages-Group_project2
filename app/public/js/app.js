@@ -38,7 +38,7 @@ function flight() {
     $("#avrg").removeClass("is-hidden");
   });
 }
-
+//on click gets value of input fields and creates new object//
 $("#add-new").on("click", function(event) {
   console.log("clicked");
   event.preventDefault();
@@ -52,28 +52,28 @@ $("#add-new").on("click", function(event) {
     goodbye: $("#goodbye")
       .val()
       .trim(),
-    thanks: $("#thank-you")
+    thankyou: $("#thankyou")
       .val()
       .trim(),
-    excuse: $("#excuse-me")
+    excuseme: $("#excuseme")
       .val()
       .trim(),
-    may_i: $("#may-I")
+    mayi: $("#mayi")
       .val()
       .trim(),
-    how_much: $("#how-much")
+    howmuch: $("#howmuch")
       .val()
       .trim(),
     bathroom: $("#bathroom")
       .val()
       .trim(),
-    yes: $("#yes")
+    yesno: $("#yesno")
       .val()
       .trim(),
-    allergic: $("#allergic")
+    allergy: $("#allergy")
       .val()
       .trim(),
-    where: $("#where")
+    whereis: $("#whereis")
       .val()
       .trim(),
     help: $("#help")
@@ -89,7 +89,20 @@ $("#add-new").on("click", function(event) {
     console.log(data); 
   })
 
-  
+  //clears out fields//
+  $("#country").val("")
+  $("#hello").val("")
+  $("#goodbye").val("")
+  $("#thankyou").val("")
+  $("#excuseme").val("")
+  $("#mayi").val("")
+  $("#howmuch").val("")
+  $("#bathroom").val("")
+  $("#yesno").val("")
+  $("#allergy").val("")
+  $("#whereis").val("")
+  $("#help").val("")
+  $("#sorry").val("")
 });
 
 //  Show phrases on click
