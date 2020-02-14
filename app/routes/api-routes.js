@@ -6,7 +6,7 @@
 // =============================================================
 
 // Requiring our Todo model
-const db = require("../models");
+var db = require("../models");
 
 // Routes
 // =============================================================
@@ -25,6 +25,7 @@ module.exports = function(app) {
   // POST route for saving a new todo
   app.post("/api/flights", function(req, res) {
     console.log(req.body);
+    
     // create takes an argument of an object describing the item we want to
     // insert into our table. In this case we just we pass in an object with a text
     // and complete property (req.body)
@@ -42,7 +43,9 @@ module.exports = function(app) {
       whereis: req.body.whereis,
       help: req.body.help,
       sorry: req.body.sorry
-    }).then(function(dbPhrase) {
+    })
+    
+    .then(function(dbPhrase) {
       // We have access to the new todo as an argument inside of the callback function
       res.json(dbPhrase);
     });

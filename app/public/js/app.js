@@ -1,4 +1,9 @@
+
+// For testing api
+console.log('app.js loaded');
+
 //Function that calls AJAX, using drop down vals as start and destination, then displays ticket price
+
 function flight() {
   let start = $("#start :selected").val();
   let end = $("#end :selected").val();
@@ -78,7 +83,13 @@ $("#add-new").on("click", function(event) {
       .val()
       .trim()
   };
-  console.log(newCountry);
+ console.log(newCountry);
+  $.post("/api/flights", newCountry)
+   .then(function(data){
+    console.log(data); 
+  })
+
+  
 });
 
 //  Show phrases on click
