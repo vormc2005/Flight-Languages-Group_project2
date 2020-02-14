@@ -1,4 +1,5 @@
 // For testing api
+console.log('app.js loaded');
 
 function flight() {
   let start = $("#start :selected").val();
@@ -62,7 +63,13 @@ $("#add-new").on("click", function(event) {
       .val()
       .trim()
   };
-  console.log(newCountry);
+ console.log(newCountry);
+  $.post("/api/flights", newCountry)
+   .then(function(data){
+    console.log(data); 
+  })
+
+  
 });
 
 //  Show phrases on click
