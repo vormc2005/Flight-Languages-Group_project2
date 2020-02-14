@@ -12,9 +12,11 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
   // GET route for getting all of the todos
-  app.get("/api/flights", function(req, res) {
+  app.get("/api/flights/:countryname", function(req, res) {
     // findAll returns all entries for a table when used with no options
-    db.Phrase.findAll({}).then(function(dbPhrase) {
+    db.Phrase.findAll({
+      where: { countryname: req.params.countryname }
+    }).then(function(dbPhrase) {
       // We have access to the todos as an argument inside of the callback function
       res.json(dbPhrase);
     });
