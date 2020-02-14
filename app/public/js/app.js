@@ -13,12 +13,10 @@ function flight() {
       "x-access-token": "67284ded587b515fc873b2264829b953"
     }
   }).then(function(response) {
-
     let search = response.data;
     console.log(search);
     console.log(end);
 
-		// GetSelectedEnd(end); 
     switch (end) {
       case "PEK":
         console.log("china");
@@ -36,9 +34,6 @@ function flight() {
         $("#price").text("$" + response.data.MOW[0].price);
         break;
     }
-
-    // console.log(response.data);
-    // console.log(response.data.BJS);
   });
 }
 
@@ -93,10 +88,10 @@ $("#add-new").on("click", function(event) {
 $("#go").on("click", function() {
   $("#airport").addClass("is-hidden");
   $("#phrases").removeClass("is-hidden");
-	$("#avrg").removeClass("is-hidden");
-	//   GetSelectedStart();
-	flight();
-	//   showPhrase();
+  $("#avrg").removeClass("is-hidden");
+  //   GetSelectedStart();
+  flight();
+  //   showPhrase();
 });
 
 // Dmitry
@@ -108,10 +103,9 @@ $("#go").on("click", function() {
 // 	}
 // }
 
-
 // $("#end").on("click", function(e) {
 // 	e.preventDefault();
-// 	let end = $("#end :selected").text();	
+// 	let end = $("#end :selected").text();
 // 	console.log(end)
 // 	if (end === "China"){
 // 		console.log("you are almost chinese")
@@ -121,7 +115,7 @@ $("#go").on("click", function() {
 // 			}
 // 		});
 // 			console.log(response);
-		
+
 // 		}else if(end==="Korea"){
 // 			console.log("Lets go to korea")
 // 	}else{
@@ -142,7 +136,7 @@ $("#go").on("click", function() {
 // 			case "DME":
 // 					showRussia();
 // 					break;
-// 			default: 
+// 			default:
 // 					alert("Please choose a country")
 // 	}
 // };
