@@ -23,7 +23,7 @@ module.exports = function(app) {
     });
   });
 
-  // POST route for saving a new todo
+  // POST route for saving a new country's phrases
   app.post("/", function(req, res) {
     console.log(req.body);
     

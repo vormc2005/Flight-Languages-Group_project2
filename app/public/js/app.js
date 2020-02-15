@@ -19,10 +19,6 @@ function flight() {
   }).then(function(response) {
     // console.log(end);
     //checking what the destination value is and then printing the response price
-
-
-
-
     switch (end) {
       case "PEK":
         console.log(response.data.BJS[1].price);
@@ -90,9 +86,9 @@ $("#add-new").on("click", function(event) {
       .val()
       .trim()
   };
- console.log(newCountry);
+console.log(newCountry);
   $.post("/api/flights", newCountry)
-   .then(function(data){
+  .then(function(data){
     console.log(data); 
   });
 
