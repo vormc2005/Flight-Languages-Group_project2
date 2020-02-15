@@ -151,40 +151,76 @@
     <div class="container has-text-centered is-hidden" id="phrases">
       <div class="card">
         <div class="card-content">
+        
           <p class="title" id="country">
-            Country here
+            {{!-- country namee goes here --}}
+
+              {{ phrases.dataValues.countryname }}
           </p>
+        
+          
           <p class="subtitle">
             11 Phrases you should know!
           </p>
           Hello
-          <div id="hello"></div>
+          
+          <div id="hello">
+            
+            {{phrases.dataValues.hello}}
+           
+            </div>
+      
           Goodbye
-          <div id="goodbye"></div>
+          <div id="goodbye">
+            {{phrases.dataValues.goodbye}}
+            </div>
           Thank you
-          <div id="thankYou"></div>
+          <div id="thankYou">
+            
+            {{phrases.dataValues.thankyou}}
+            
+            </div>
           Excuse me
-          <div id="excuseMe"></div>
+          <div id="excuseMe">
+            {{phrases.dataValues.excuseme}}
+            </div>
           May I have ...
-          <div id="mayI"></div>
+          <div id="mayI">
+            {{phrases.dataValues.mayi}}
+            </div>
           How much does it cost?
-          <div id="howMuch"></div>
+          <div id="howMuch">
+            {{phrases.dataValues.howmuch}}
+            </div>
           Bathroom
-          <div id="bathroom"></div>
+          <div id="bathroom">
+            {{phrases.dataValues.bathroom}}
+            </div>
           Yes/No
-          <div id="yN"></div>
+          <div id="yN">
+            {{phrases.dataValues.yesno}}
+            </div>
           I am allergic to ...
-          <div id="allergy"></div>
+          <div id="allergy">
+            {{phrases.dataValues.allergy}}
+            </div>
           Where is ...
-          <div id="whereIs"></div>
+          <div id="whereIs">
+            {{phrases.dataValues.whereis}}
+            </div>
           Help
-          <div id="help"></div>
+          <div id="help">
+            {{phrases.dataValues.help}}
+            </div>
           Sorry
-          <div id="sorry"></div>
+          <div id="sorry">
+            {{phrases.dataValues.sorry}}
+            </div>
+         
         </div>
       </div>
     </div>
-
+   {{!-- {{/each}} --}}
     <!-- ====== -->
     <!-- Footer -->
     <!-- ====== -->

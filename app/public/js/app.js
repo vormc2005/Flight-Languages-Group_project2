@@ -1,12 +1,12 @@
 
 // For testing api
 console.log('app.js loaded');
-
 //Function that calls AJAX, using drop down vals as start and destination, then displays ticket price
 
 function flight() {
   let start = $("#start :selected").val();
   let end = $("#end :selected").val();
+  
   $.ajax({
     url: `https://travelpayouts-travelpayouts-flight-data-v1.p.rapidapi.com/v1/prices/cheap?destination=${end}&origin=${start}&currency=USD&page=1`,
     method: "GET",
@@ -19,18 +19,25 @@ function flight() {
   }).then(function(response) {
     // console.log(end);
     //checking what the destination value is and then printing the response price
+
+
+
+
     switch (end) {
       case "PEK":
         console.log(response.data.BJS[1].price);
         $("#price").text("$" + response.data.BJS[1].price);
+       displayTablevalue();
         break;
       case "ICN":
         console.log(response.data.SEL[0].price);
         $("#price").text("$" + response.data.SEL[0].price);
+        displayTablevalue();
         break;
       case "DME":
         console.log(response.data.MOW[0].price);
         $("#price").text("$" + response.data.MOW[0].price);
+        displayTablevalue();
         break;
     }
     $("#loading").addClass("is-hidden");
@@ -38,7 +45,7 @@ function flight() {
     $("#avrg").removeClass("is-hidden");
   });
 }
-//on click gets value of input fields and creates new object//
+
 $("#add-new").on("click", function(event) {
   console.log("clicked");
   event.preventDefault();
@@ -87,40 +94,62 @@ $("#add-new").on("click", function(event) {
   $.post("/api/flights", newCountry)
    .then(function(data){
     console.log(data); 
-  })
+  });
+
 
   //clears out fields//
-  $("#country").val("")
-  $("#hello").val("")
-  $("#goodbye").val("")
-  $("#thankyou").val("")
-  $("#excuseme").val("")
-  $("#mayi").val("")
-  $("#howmuch").val("")
-  $("#bathroom").val("")
-  $("#yesno").val("")
-  $("#allergy").val("")
-  $("#whereis").val("")
-  $("#help").val("")
-  $("#sorry").val("")
+  // $("#country").val("")
+  // $("#hello").val("")
+  // $("#goodbye").val("")
+  // $("#thankyou").val("")
+  // $("#excuseme").val("")
+  // $("#mayi").val("")
+  // $("#howmuch").val("")
+  // $("#bathroom").val("")
+  // $("#yesno").val("")
+  // $("#allergy").val("")
+  // $("#whereis").val("")
+  // $("#help").val("")
+  // $("#sorry").val("")
 });
 
 //  Show phrases on click
 $("#go").on("click", function() {
   $("#airport").addClass("is-hidden");
   $("#loading").removeClass("is-hidden");
-  setTimeout(flight, 2000);
+  // setTimeout(flight, 2000);
+  flight();
 });
+
+
+displayTablevalue =()=>{
+let countryname = $("#end :selected").text();
+  let countryLower = countryname.toLowerCase();
+    // window.location.href = `http://localhost:8080/${countryLower}`
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Dmitry
 // for (i=0; i< Phrase.length; i++){
 // 	if (Phrase.countryname ==="Korea"){
 // 		var country = val(phrase.countryname);
 // 		$("#country").append(country)
-
 // 	}
 // }
-
 // $("#end").on("click", function(e) {
 // 	e.preventDefault();
 // 	let end = $("#end :selected").text();
@@ -133,14 +162,12 @@ $("#go").on("click", function() {
 // 			}
 // 		});
 // 			console.log(response);
-
 // 		}else if(end==="Korea"){
 // 			console.log("Lets go to korea")
 // 	}else{
 // 		console.log("Lets go to Russia")
 // 	}
 //   });
-
 // // Khalil
 // function GetSelectedEnd(end){
 // 	// let end = $("#end :selected").val();
