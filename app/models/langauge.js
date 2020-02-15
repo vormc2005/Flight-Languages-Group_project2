@@ -1,6 +1,7 @@
 module.exports = function(sequelize, Datatypes) {
   const Phrase = sequelize.define("Phrase", {
     countryname: Datatypes.STRING,
+    airportcode: Datatypes.STRING,
     hello: Datatypes.STRING,
     goodbye: Datatypes.STRING,
     thankyou: Datatypes.STRING,
@@ -24,6 +25,7 @@ module.exports = function(sequelize, Datatypes) {
     .then(function() {
       Phrase.create({
         countryname: "China",
+        airportcode: "PEK",
         hello: "knee how",
         goodbye: "zaijian",
         thankyou: "shyea shyea",
@@ -39,6 +41,7 @@ module.exports = function(sequelize, Datatypes) {
       }),
         Phrase.create({
           countryname: "Korea",
+          airportcode: "ICN",
           hello: "ahn young ha say yo",
           goodbye: "ahn young gey say yo",
           thankyou: "gahm sahm knee dah",
@@ -54,6 +57,7 @@ module.exports = function(sequelize, Datatypes) {
         }),
         Phrase.create({
           countryname: "Russia",
+          airportcode: "DME",
           hello: "Zdravstvuite",
           goodbye: "Do svidaniya",
           thankyou: "Spasibo",
