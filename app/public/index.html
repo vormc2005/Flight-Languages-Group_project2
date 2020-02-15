@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Bulma -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+    <!-- FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <title>BuddySystem</title>
+  </head>
+
+  <body>
+    <!--========-->
+    <!-- navbar -->
+    <!--========-->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/index.html">
+          BuddySystem (BETA)
+        </a>
+
+        <a
+          role="button"
+          class="navbar-burger burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="/index.html">
+            Home
+          </a>
+
+          <a class="navbar-item" href="/submit.html">
+            Help us grow!
+          </a>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item"></div>
+        </div>
+      </div>
+    </nav>
+
+    <!--======-->
+    <!-- Hero -->
+    <!--======-->
+    <section class="hero is-medium is-primary is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            Welcome to BuddySystem (BETA)
+          </h1>
+          <h2 class="subtitle">
+            Here to help when you just can't find the right words
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============= -->
+    <!-- Dropdown Form -->
+    <!-- ============= -->
+    <br /><br />
+    <div class="container has-text-centered" id="airport">
+      <div class="card">
+        <div class="card-content">
+          <p class="title">
+            Have a place you wish to go?
+          </p>
+          <p class="subtitle">
+            Select from our database to see THE phrases you need to know when
+            you travel!
+          </p>
+        </div>
+        <br />
+        <!-- Card footer with submit button -->
+        <footer class="card-footer">
+          <p class="card-footer-item">
+            <a class="button is-primary" href="/china">China</a>
+            <a class="button is-primary" href="/korea">Korea</a>
+            <a class="button is-primary" href="/russia">Russia</a>
+          </p>
+        </footer>
+      </div>
+    </div>
+    <!-- ======================= -->
+    <!-- Card with Average Price -->
+    <!-- ======================= -->
+    <div class="container has-text-centered is-hidden" id="avrg">
+      <div class="card">
+        <div class="card-content">
+          <p class="title">
+            The average price for a flight from this airport is:
+          </p>
+          <p class="subtitle" id="price">
+            Sorry! The price of a direct flight from this airport is currently
+            unavailable.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="loading" class="has-text-centered is-hidden">
+      <img src="./assets/img/plane.gif" />
+    </div>
+
+    <!-- ================= -->
+    <!-- Card with Phrases -->
+    <!-- ================= -->
+    <div class="container has-text-centered is-hidden" id="phrases">
+      <div class="card">
+        <div class="card-content">
+          <p class="title" id="country">
+            Country here
+          </p>
+          <p class="subtitle">
+            11 Phrases you should know!
+          </p>
+          Hello
+          <div id="hello"></div>
+          Goodbye
+          <div id="goodbye"></div>
+          Thank you
+          <div id="thankYou"></div>
+          Excuse me
+          <div id="excuseMe"></div>
+          May I have ...
+          <div id="mayI"></div>
+          How much does it cost?
+          <div id="howMuch"></div>
+          Bathroom
+          <div id="bathroom"></div>
+          Yes/No
+          <div id="yN"></div>
+          I am allergic to ...
+          <div id="allergy"></div>
+          Where is ...
+          <div id="whereIs"></div>
+          Help
+          <div id="help"></div>
+          Sorry
+          <div id="sorry"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== -->
+    <!-- Footer -->
+    <!-- ====== -->
+    <br /><br />
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>BuddySystem</strong> by Jonathan Choi, Brendan Erickson,
+          Dmitry Voronov, and Khalil Hall. The source code is licensed
+          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The
+          website content is licensed
+          <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+            >CC BY NC SA 4.0</a
+          >.
+        </p>
+      </div>
+    </footer>
+  </body>
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+  ></script>
+  <script src="/js/app.js"></script>
+</html>
