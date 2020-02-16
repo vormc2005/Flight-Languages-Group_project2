@@ -17,19 +17,22 @@ In order to use the application, be sure to install all of the dependencies (see
 
 ## Functionality
 
+Landing page where user decides where they would like to go.
 ![first example of working application](https://github.com/MrBachChoi/groupproject2/blob/master/img/lang1.png)
+Second page where user selects their point of origin.
 ![second example of working application](https://github.com/MrBachChoi/groupproject2/blob/master/img/lang2.png)
+A demo of the application working.
 ![second example of working application](https://github.com/MrBachChoi/groupproject2/blob/master/img/lang3.png)
 
 ## Technologies
 
-Node
-Bulma
-Sequelize
-Handlebars
-Heroku
-MySQL Workbench
-Flight Data API
+- Node
+- Bulma
+- Sequelize
+- Handlebars
+- Heroku
+- MySQL Workbench
+- Flight Data API
 
 ## Dependencies
 
