@@ -17,9 +17,9 @@ In order to use the application, be sure to install all of the dependencies (see
 
 ## Functionality
 
-![first example of working application](https://github.com/brer4449/homework9/blob/master/img/lang1.png)
-![second example of working application](https://github.com/brer4449/homework9/blob/master/img/lang2.png)
-![second example of working application](https://github.com/brer4449/homework9/blob/master/img/lang3.png)
+![first example of working application](https://github.com/MrBachChoi/groupproject2/blob/master/img/lang1.png)
+![second example of working application](https://github.com/MrBachChoi/groupproject2/blob/master/img/lang2.png)
+![second example of working application](https://github.com/MrBachChoi/groupproject2/blob/master/img/lang3.png)
 
 ## Technologies
 
