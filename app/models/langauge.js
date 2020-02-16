@@ -13,7 +13,8 @@ module.exports = function(sequelize, Datatypes) {
     allergy: Datatypes.STRING,
     whereis: Datatypes.STRING,
     help: Datatypes.STRING,
-    sorry: Datatypes.STRING
+    sorry: Datatypes.STRING,
+    countrycode: Datatypes.STRING
   });
 
   //should move this to it's own seed folder
@@ -37,7 +38,8 @@ module.exports = function(sequelize, Datatypes) {
         allergy: "wol dway ___ gwol min",
         whereis: " ___ zai narrrrr?",
         help: "bong mong",
-        sorry: "dway boo chee"
+        sorry: "dway boo chee",
+        countrycode:"ch-CN"
       }),
         Phrase.create({
           countryname: "Korea",
@@ -53,7 +55,8 @@ module.exports = function(sequelize, Datatypes) {
           allergy: "_______ moat moe go",
           whereis: "______ ouh lee ees oh yo",
           help: "doe wa joe say yo",
-          sorry: "jay song haam knee dah"
+          sorry: "jay song haam knee dah",
+          countrycode:"ko"
         }),
         Phrase.create({
           countryname: "Russia",
@@ -69,7 +72,8 @@ module.exports = function(sequelize, Datatypes) {
           allergy: "U menya alergiya na...",
           whereis: "Gde nahoditsiya",
           help: "Pomogite",
-          sorry: "Proshu prosh'eniya"
+          sorry: "Proshu prosh'eniya",
+          countrycode:"ru"
         });
         Phrase.create({
           countryname: "Mexico",
@@ -85,7 +89,8 @@ module.exports = function(sequelize, Datatypes) {
           allergy: "Soy alérgica (feminine), Soy alérgico (masculine)",
           whereis: "dónde está _____",
           help: "Ayuda",
-          sorry: "Lo siento"
+          sorry: "Lo siento",
+          countrycode:"fr"
         });
         Phrase.create({
           countryname: "France",
@@ -101,7 +106,8 @@ module.exports = function(sequelize, Datatypes) {
           allergy: "Je suis allergique à _____",
           whereis: "Où se trouve",
           help: "Aidez-moi",
-          sorry: "Pardon"
+          sorry: "Pardon",
+          countrycode:"es"
         });
     });
   return Phrase;
