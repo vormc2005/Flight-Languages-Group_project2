@@ -71,6 +71,38 @@ module.exports = function(sequelize, Datatypes) {
           help: "Pomogite",
           sorry: "Proshu prosh'eniya"
         });
+        Phrase.create({
+          countryname: "Mexico",
+          airportcode: "CUN",
+          hello: "Hola",
+          goodbye: "Adiós",
+          thankyou: "Gracias",
+          excuseme: "Perdón",
+          mayi: "Puedo tener",
+          howmuch: "Cuánto es",
+          bathroom: "Baño",
+          yesno: "Si/No",
+          allergy: "Soy alérgica (feminine), Soy alérgico (masculine)",
+          whereis: "dónde está _____",
+          help: "Ayuda",
+          sorry: "Lo siento"
+        });
+        Phrase.create({
+          countryname: "France",
+          airportcode: "CDG",
+          hello: "Bonjour",
+          goodbye: "Au revoir",
+          thankyou: "Merci",
+          excuseme: "Excusez-moi",
+          mayi: "Puis-je avoir",
+          howmuch: "Combien ça coûte",
+          bathroom: "Salle de bains",
+          yesno: "Oui/Non",
+          allergy: "Je suis allergique à _____",
+          whereis: "Où se trouve",
+          help: "Aidez-moi",
+          sorry: "Pardon"
+        });
     });
   return Phrase;
 };

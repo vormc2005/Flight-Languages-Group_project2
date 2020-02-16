@@ -35,6 +35,16 @@ function flight() {
         $("#price").text("$" + response.data.MOW[0].price);
         displayTablevalue();
         break;
+      case "CUN":
+        console.log(response.data.CUN[0].price);
+        $("#price").text("$" + response.data.CUN[0].price);
+        displayTablevalue();
+        break;
+      case "CDG":
+        console.log(response.data.PAR[0].price);
+        $("#price").text("$" + response.data.PAR[0].price);
+        displayTablevalue();
+        break;
     }
     $("#loading").addClass("is-hidden");
     $("#phrases").removeClass("is-hidden");
