@@ -24,7 +24,7 @@ module.exports = function(app) {
   });
 
   // POST route for saving a new country's phrases
-  app.post("/", function(req, res) {
+  app.post("/api/flights", function(req, res) {
     console.log(req.body);
     
     // create takes an argument of an object describing the item we want to
