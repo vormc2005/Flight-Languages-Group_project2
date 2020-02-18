@@ -1,6 +1,7 @@
 module.exports = function(sequelize, Datatypes) {
   const Phrase = sequelize.define("Phrase", {
     countryname: Datatypes.STRING,
+    airportcode: Datatypes.STRING,
     hello: Datatypes.STRING,
     goodbye: Datatypes.STRING,
     thankyou: Datatypes.STRING,
@@ -24,6 +25,7 @@ module.exports = function(sequelize, Datatypes) {
     .then(function() {
       Phrase.create({
         countryname: "China",
+        airportcode: "PEK",
         hello: "knee how",
         goodbye: "zaijian",
         thankyou: "shyea shyea",
@@ -39,6 +41,7 @@ module.exports = function(sequelize, Datatypes) {
       }),
         Phrase.create({
           countryname: "Korea",
+          airportcode: "ICN",
           hello: "ahn young ha say yo",
           goodbye: "ahn young gey say yo",
           thankyou: "gahm sahm knee dah",
@@ -54,6 +57,7 @@ module.exports = function(sequelize, Datatypes) {
         }),
         Phrase.create({
           countryname: "Russia",
+          airportcode: "DME",
           hello: "Zdravstvuite",
           goodbye: "Do svidaniya",
           thankyou: "Spasibo",
@@ -62,10 +66,42 @@ module.exports = function(sequelize, Datatypes) {
           howmuch: "Skol'ko stoit",
           bathroom: "Tualet",
           yesno: "Da/Net",
-          allergy: "Alergiya",
+          allergy: "U menya alergiya na...",
           whereis: "Gde nahoditsiya",
           help: "Pomogite",
           sorry: "Proshu prosh'eniya"
+        });
+        Phrase.create({
+          countryname: "Mexico",
+          airportcode: "CUN",
+          hello: "Hola",
+          goodbye: "Adiós",
+          thankyou: "Gracias",
+          excuseme: "Perdón",
+          mayi: "Puedo tener",
+          howmuch: "Cuánto es",
+          bathroom: "Baño",
+          yesno: "Si/No",
+          allergy: "Soy alérgica (feminine), Soy alérgico (masculine)",
+          whereis: "dónde está _____",
+          help: "Ayuda",
+          sorry: "Lo siento"
+        });
+        Phrase.create({
+          countryname: "France",
+          airportcode: "CDG",
+          hello: "Bonjour",
+          goodbye: "Au revoir",
+          thankyou: "Merci",
+          excuseme: "Excusez-moi",
+          mayi: "Puis-je avoir",
+          howmuch: "Combien ça coûte",
+          bathroom: "Salle de bains",
+          yesno: "Oui/Non",
+          allergy: "Je suis allergique à _____",
+          whereis: "Où se trouve",
+          help: "Aidez-moi",
+          sorry: "Pardon"
         });
     });
   return Phrase;
