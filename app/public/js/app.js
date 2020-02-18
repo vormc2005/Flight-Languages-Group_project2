@@ -1,8 +1,9 @@
-
 // For testing api
+
 console.log('app.js loaded');
 //Function that calls AJAX, using drop down vals as start and destination, then displays ticket price
 
+//Function that calls AJAX, using drop down values as point of origin and destination, then displays ticket price
 function flight() {
   let start = $("#start :selected").val();
   let end = $("#end :selected").val();
@@ -17,7 +18,6 @@ function flight() {
       "x-access-token": "67284ded587b515fc873b2264829b953"
     }
   }).then(function(response) {
-    // console.log(end);
     //checking what the destination value is and then printing the response price
     switch (end) {
       case "PEK":
@@ -96,6 +96,11 @@ $("#add-new").on("click", function(event) {
       .val()
       .trim()
   };
+  console.log(newCountry);
+  $.post("/api/flights", newCountry).then(function(data) {
+    console.log(data);
+  });
+
   $("#submission").addClass("is-hidden");
   $("#thanks").removeClass("is-hidden");
 console.log(newCountry);
@@ -124,11 +129,38 @@ console.log(newCountry);
 //  Show phrases on click
 $("#go").on("click", function() {
   $("#airport").addClass("is-hidden");
+  // Shows loading plane buffer on click for two seconds, then runs flight function
   $("#loading").removeClass("is-hidden");
   // setTimeout(flight, 2000);
   flight();
 });
 
+// Translate API stuff:
+/*
+const axios = require("axios");
+var countryCode; //This needs to be a letter combo code for country of choice
+
+axios({
+    "method":"POST",
+    "url":"https://my-translator-pro.p.rapidapi.com/api/translate",
+    "headers":{
+    "content-type":"application/json",
+    "x-rapidapi-host":"my-translator-pro.p.rapidapi.com",
+    "x-rapidapi-key":"f0ce25292dmsha2e4b8e0953bbd1p1fed83jsnfd16ad1763cf",
+    "targetlanguage":"RU",
+    "accept":"application/json"
+    },"data":{
+    "sourceText":" Hello "
+    }
+    })
+    .then((response)=>{
+      console.log(response.data.Translated)
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
+*/
+=======
 
 displayTablevalue =()=>{
 let countryname = $("#end :selected").text();
