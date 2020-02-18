@@ -96,6 +96,8 @@ $("#add-new").on("click", function(event) {
       .val()
       .trim()
   };
+  $("#submission").addClass("is-hidden");
+  $("#thanks").removeClass("is-hidden");
 console.log(newCountry);
   $.post("/api/flights", newCountry)
   .then(function(data){
