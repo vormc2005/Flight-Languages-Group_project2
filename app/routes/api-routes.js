@@ -5,13 +5,13 @@
 // Dependencies
 // =============================================================
 
-// Requiring our Todo model
+// Requiring our languages model
 var db = require("../models");
 
 // Routes
 // =============================================================
 module.exports = function(app) {
-  // GET route for getting all of the todos
+  // GET route for getting all of the Phrases
   app.get("/:countryname", function(req, res) {
     // findAll returns all entries for a table when used with no options
     db.Phrase.findOne({
@@ -23,8 +23,8 @@ module.exports = function(app) {
     });
   });
 
-  // POST route for saving a new todo
-  app.post("/", function(req, res) {
+  // POST route for saving a new country's phrases
+  app.post("/api/flights", function(req, res) {
     console.log(req.body);
     
     // create takes an argument of an object describing the item we want to
@@ -47,15 +47,15 @@ module.exports = function(app) {
     })
     
     .then(function(dbPhrase) {
-      // We have access to the new todo as an argument inside of the callback function
+      // We have access to the new language as an argument inside of the callback function
       res.json(dbPhrase);
     });
   });
 
-  // DELETE route for deleting todos. We can get the id of the todo we want to delete from
-  // req.params.id
+  // DELETE route for deleting Phrases. We can get the id of the phrase we want to delete from
+  // req.params.id//Tere is no function of deleting in this application at this point //
   app.delete("/:id", function(req, res) {});
 
-  // PUT route for updating flights. We can get the updated todo from req.body
+  // PUT route for updating flights. We can get the updated phrase from req.body
   app.put("/", function(req, res) {});
 };

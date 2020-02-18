@@ -97,10 +97,7 @@
         <div class="card-content">
           <div class="select is-primary">
             <select id="end">
-              <option>Select Country</option>
-              <option value="PEK">China</option>
-              <option value="ICN">Korea</option>
-              <option value="DME">Russia</option>
+              <option value={{ phrases.dataValues.airportcode }}>{{ phrases.dataValues.countryname }}</option>
             </select>
           </div>
 
@@ -162,7 +159,7 @@
           <p class="subtitle">
             11 Phrases you should know!
           </p>
-          Hello
+          <p class="has-text-weight-bold">Hello</p>
           
           <div id="hello">
             
@@ -170,49 +167,49 @@
            
             </div>
       
-          Goodbye
+          <p class="has-text-weight-bold">Goodbye</p>
           <div id="goodbye">
             {{phrases.dataValues.goodbye}}
             </div>
-          Thank you
+          <p class="has-text-weight-bold">Thank you</p>
           <div id="thankYou">
             
             {{phrases.dataValues.thankyou}}
             
             </div>
-          Excuse me
+          <p class="has-text-weight-bold">Excuse me</p>
           <div id="excuseMe">
             {{phrases.dataValues.excuseme}}
             </div>
-          May I have ...
+          <p class="has-text-weight-bold">May I have ...</p>
           <div id="mayI">
             {{phrases.dataValues.mayi}}
             </div>
-          How much does it cost?
+          <p class="has-text-weight-bold">How much does it cost?</p>
           <div id="howMuch">
             {{phrases.dataValues.howmuch}}
             </div>
-          Bathroom
+          <p class="has-text-weight-bold">Bathroom</p>
           <div id="bathroom">
             {{phrases.dataValues.bathroom}}
             </div>
-          Yes/No
+          <p class="has-text-weight-bold">Yes/No</p>
           <div id="yN">
             {{phrases.dataValues.yesno}}
             </div>
-          I am allergic to ...
+          <p class="has-text-weight-bold">I am allergic to ...</p>
           <div id="allergy">
             {{phrases.dataValues.allergy}}
             </div>
-          Where is ...
+          <p class="has-text-weight-bold">Where is ...</p>
           <div id="whereIs">
             {{phrases.dataValues.whereis}}
             </div>
-          Help
+          <p class="has-text-weight-bold">Help</p>
           <div id="help">
             {{phrases.dataValues.help}}
             </div>
-          Sorry
+          <p class="has-text-weight-bold">Sorry</p>
           <div id="sorry">
             {{phrases.dataValues.sorry}}
             </div>

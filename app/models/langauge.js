@@ -1,6 +1,7 @@
 module.exports = function(sequelize, Datatypes) {
   const Phrase = sequelize.define("Phrase", {
     countryname: Datatypes.STRING,
+    airportcode: Datatypes.STRING,
     hello: Datatypes.STRING,
     goodbye: Datatypes.STRING,
     thankyou: Datatypes.STRING,
@@ -12,7 +13,8 @@ module.exports = function(sequelize, Datatypes) {
     allergy: Datatypes.STRING,
     whereis: Datatypes.STRING,
     help: Datatypes.STRING,
-    sorry: Datatypes.STRING
+    sorry: Datatypes.STRING,
+    countrycode: Datatypes.STRING
   });
 
   //should move this to it's own seed folder
@@ -24,6 +26,7 @@ module.exports = function(sequelize, Datatypes) {
     .then(function() {
       Phrase.create({
         countryname: "China",
+        airportcode: "PEK",
         hello: "knee how",
         goodbye: "zaijian",
         thankyou: "shyea shyea",
@@ -35,10 +38,12 @@ module.exports = function(sequelize, Datatypes) {
         allergy: "wol dway ___ gwol min",
         whereis: " ___ zai narrrrr?",
         help: "bong mong",
-        sorry: "dway boo chee"
+        sorry: "dway boo chee",
+        countrycode:"ch-CN"
       }),
         Phrase.create({
           countryname: "Korea",
+          airportcode: "ICN",
           hello: "ahn young ha say yo",
           goodbye: "ahn young gey say yo",
           thankyou: "gahm sahm knee dah",
@@ -50,10 +55,12 @@ module.exports = function(sequelize, Datatypes) {
           allergy: "_______ moat moe go",
           whereis: "______ ouh lee ees oh yo",
           help: "doe wa joe say yo",
-          sorry: "jay song haam knee dah"
+          sorry: "jay song haam knee dah",
+          countrycode:"ko"
         }),
         Phrase.create({
           countryname: "Russia",
+          airportcode: "DME",
           hello: "Zdravstvuite",
           goodbye: "Do svidaniya",
           thankyou: "Spasibo",
@@ -65,7 +72,42 @@ module.exports = function(sequelize, Datatypes) {
           allergy: "U menya alergiya na...",
           whereis: "Gde nahoditsiya",
           help: "Pomogite",
-          sorry: "Proshu prosh'eniya"
+          sorry: "Proshu prosh'eniya",
+          countrycode:"ru"
+        });
+        Phrase.create({
+          countryname: "Mexico",
+          airportcode: "CUN",
+          hello: "Hola",
+          goodbye: "Adiós",
+          thankyou: "Gracias",
+          excuseme: "Perdón",
+          mayi: "Puedo tener",
+          howmuch: "Cuánto es",
+          bathroom: "Baño",
+          yesno: "Si/No",
+          allergy: "Soy alérgica (feminine), Soy alérgico (masculine)",
+          whereis: "dónde está _____",
+          help: "Ayuda",
+          sorry: "Lo siento",
+          countrycode:"fr"
+        });
+        Phrase.create({
+          countryname: "France",
+          airportcode: "CDG",
+          hello: "Bonjour",
+          goodbye: "Au revoir",
+          thankyou: "Merci",
+          excuseme: "Excusez-moi",
+          mayi: "Puis-je avoir",
+          howmuch: "Combien ça coûte",
+          bathroom: "Salle de bains",
+          yesno: "Oui/Non",
+          allergy: "Je suis allergique à _____",
+          whereis: "Où se trouve",
+          help: "Aidez-moi",
+          sorry: "Pardon",
+          countrycode:"es"
         });
     });
   return Phrase;
