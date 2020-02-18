@@ -160,7 +160,6 @@ axios({
       console.log(error)
     })
 */
-=======
 
 displayTablevalue =()=>{
 let countryname = $("#end :selected").text();
