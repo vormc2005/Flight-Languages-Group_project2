@@ -1,6 +1,8 @@
+
 // For testing api
 console.log('app.js loaded');
 //Function that calls AJAX, using drop down vals as start and destination, then displays ticket price
+
 function flight() {
   let start = $("#start :selected").val();
   let end = $("#end :selected").val();
@@ -17,24 +19,31 @@ function flight() {
   }).then(function(response) {
     // console.log(end);
     //checking what the destination value is and then printing the response price
-
-
     switch (end) {
       case "PEK":
         console.log(response.data.BJS[1].price);
-       
         $("#price").text("$" + response.data.BJS[1].price);
        displayTablevalue();
         break;
       case "ICN":
         console.log(response.data.SEL[0].price);
-              $("#price").text("$" + response.data.SEL[0].price);
+        $("#price").text("$" + response.data.SEL[0].price);
         displayTablevalue();
         break;
       case "DME":
         console.log(response.data.MOW[0].price);
+        $("#price").text("$" + response.data.MOW[0].price);
         displayTablevalue();
-        $("#price").text("$" + response.data.MOW[0].price);        
+        break;
+      case "CUN":
+        console.log(response.data.CUN[0].price);
+        $("#price").text("$" + response.data.CUN[0].price);
+        displayTablevalue();
+        break;
+      case "CDG":
+        console.log(response.data.PAR[0].price);
+        $("#price").text("$" + response.data.PAR[0].price);
+        displayTablevalue();
         break;
     }
     $("#loading").addClass("is-hidden");
@@ -42,6 +51,7 @@ function flight() {
     $("#avrg").removeClass("is-hidden");
   });
 }
+
 $("#add-new").on("click", function(event) {
   console.log("clicked");
   event.preventDefault();
@@ -55,28 +65,28 @@ $("#add-new").on("click", function(event) {
     goodbye: $("#goodbye")
       .val()
       .trim(),
-    thanks: $("#thank-you")
+    thankyou: $("#thankyou")
       .val()
       .trim(),
-    excuse: $("#excuse-me")
+    excuseme: $("#excuseme")
       .val()
       .trim(),
-    may_i: $("#may-I")
+    mayi: $("#mayi")
       .val()
       .trim(),
-    how_much: $("#how-much")
+    howmuch: $("#howmuch")
       .val()
       .trim(),
     bathroom: $("#bathroom")
       .val()
       .trim(),
-    yes: $("#yes")
+    yesno: $("#yesno")
       .val()
       .trim(),
-    allergic: $("#allergic")
+    allergy: $("#allergy")
       .val()
       .trim(),
-    where: $("#where")
+    whereis: $("#whereis")
       .val()
       .trim(),
     help: $("#help")
@@ -86,12 +96,29 @@ $("#add-new").on("click", function(event) {
       .val()
       .trim()
   };
- console.log(newCountry);
+console.log(newCountry);
   $.post("/api/flights", newCountry)
-   .then(function(data){
+  .then(function(data){
     console.log(data); 
-  })
+  });
+
+
+  //clears out fields//
+  // $("#country").val("")
+  // $("#hello").val("")
+  // $("#goodbye").val("")
+  // $("#thankyou").val("")
+  // $("#excuseme").val("")
+  // $("#mayi").val("")
+  // $("#howmuch").val("")
+  // $("#bathroom").val("")
+  // $("#yesno").val("")
+  // $("#allergy").val("")
+  // $("#whereis").val("")
+  // $("#help").val("")
+  // $("#sorry").val("")
 });
+
 //  Show phrases on click
 $("#go").on("click", function() {
   $("#airport").addClass("is-hidden");
@@ -101,114 +128,11 @@ $("#go").on("click", function() {
 });
 
 
-/**API code for translate function 
- * 
- * 
- * *******************************
-***********************************/
-
-
-const axios = require("axios");
-
-axios({
-    method:`POST`,
-    url:`https://my-translator-pro.p.rapidapi.com/api/translate`,
-    headers:{
-    "content-type":"application/json",
-    "x-rapidapi-host":"my-translator-pro.p.rapidapi.com",
-    "x-rapidapi-key":"f0ce25292dmsha2e4b8e0953bbd1p1fed83jsnfd16ad1763cf",
-    targetlanguage:`RU`,
-    accept:"application/json"
-    },"data":{
-    sourceText:`Hello`
-    }
-    })
-    .then((response)=>{
-      console.log(response.data.Translated)
-    })
-    .catch((error)=>{
-      console.log(error)
-    })
-
-    
-
-
-
-
-// function handleRequest(req, res) {
-
-//   // Capture the url the request is made to
-//   var path = req.url;
-
-//   // Depending on the URL, display a different HTML file.
-//   switch (path) {
-
-//   case "/index":
-//     return displayRoot(res);
-
-//   case "/portfolio":
-//     return displayPortfolio(res);
-
-//   default:
-//     return display404(path, res);
-//   }
-// }
-
-// // When someone visits the "http://localhost:8080/" path, this function is run.
-// function displayRoot(res) {
-//   var myHTML = "<html>" +
-//     "<body><h1>Home Page</h1>" +
-//     "<a href='/portfolio'>Portfolio</a>" +
-//     "</body></html>";
-
-//   // Configure the response to return a status code of 200 (meaning everything went OK), and to be an HTML document
-//   res.writeHead(200, { "Content-Type": "text/html" });
-
-//   // End the response by sending the client the myHTML string (which gets rendered as an HTML document thanks to the code above)
-//   res.end(myHTML);
-// }
-
-// // When someone visits the "http://localhost:8080/portfolio" path, this function is run.
-// function displayPortfolio(res) {
-//   var myHTML = "<html>" +
-//     "<body><h1>My Portfolio</h1>" +
-//     "<a href='/'>Go Home</a>" +
-//     "</body></html>";
-
-//   // Configure the response to return a status code of 200 (meaning everything went OK), and to be an HTML document
-//   res.writeHead(200, { "Content-Type": "text/html" });
-
-//   // End the response by sending the client the myHTML string (which gets rendered as an HTML document thanks to the code above)
-//   res.end(myHTML);
-// }
-
-// // When someone visits any path that is not specifically defined, this function is run.
-// function display404(url, res) {
-//   var myHTML = "<html>" +
-//     "<body><h1>404 Not Found </h1>" +
-//     "<p>The page you were looking for: " + url + " can not be found</p>" +
-//     "</body></html>";
-
-//   // Configure the response to return a status code of 404 (meaning the page/resource asked for couldn't be found), and to be an HTML document
-//   res.writeHead(404, { "Content-Type": "text/html" });
-
-//   // End the response by sending the client the myHTML string (which gets rendered as an HTML document thanks to the code above)
-//   res.end(myHTML);
-// }
-
-// displayTablevalue =()=>{
-// let countryname = $("#end :selected").text();
-//   let countryLower = countryname.toLowerCase();
-//   var path = req.url;
-//   // let newUrl = `http://localhost:8080/${countryLower}`
-//   // window.location.replace= newUrl;
-//   switch (path){
-//     case "/index":
-//       return ("htt")
-
-//   }
-
-// }
+displayTablevalue =()=>{
+let countryname = $("#end :selected").text();
+  let countryLower = countryname.toLowerCase();
+    // window.location.href = `http://localhost:8080/${countryLower}`
+}
 
 
 
